@@ -11,35 +11,33 @@
 </head>
 
 <body>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
+
+    <script type="module" defer>
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
         const firebaseConfig = {
-          apiKey: "AIzaSyBV4KglOA-_paf18UZXMJvKcmvPPXcnbDw",
-          authDomain: "hotspot---mikrotik-agil.firebaseapp.com",
-          projectId: "hotspot---mikrotik-agil",
-          storageBucket: "hotspot---mikrotik-agil.appspot.com",
-          messagingSenderId: "76813396975",
-          appId: "1:76813396975:web:47990c5d3114c476b0a41a",
-          measurementId: "G-TJK7JBTK2P"
+            apiKey: "AIzaSyBV4KglOA-_paf18UZXMJvKcmvPPXcnbDw",
+            authDomain: "hotspot---mikrotik-agil.firebaseapp.com",
+            projectId: "hotspot---mikrotik-agil",
+            storageBucket: "hotspot---mikrotik-agil.appspot.com",
+            messagingSenderId: "76813396975",
+            appId: "1:76813396975:web:47990c5d3114c476b0a41a",
+            measurementId: "G-TJK7JBTK2P"
         };
-      
-        // Initialize Firebase
+
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
-    <!-- two other colors
 
-<body class="lite">
-<body class="dark">
+        function handleGoogleAuth() {
+            console.log("faz o login")
+        }
 
--->
+        const buttonGoogleLoginElement = document.getElementById("google-login")
+        buttonGoogleLoginElement.addEventListener("click", handleGoogleAuth)
+
+    </script>
+
+
+    <script type="module"></script>
 
     $(if chap-id)
     <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
@@ -67,7 +65,7 @@
                     $(endif)>
                     <input type="hidden" name="dst" value="$(link-orig)" />
                     <input type="hidden" name="popup" value="true" />
-                    <img class="logo" data-name="Layer 1" src="logo-agil-online-01.png" alt="Internet Agil">
+                    <img class="logo" data-name="Layer 1" src="./img/logo-agil.png" alt="Internet Agil">
 
                     <p class="info $(if error)alert$(endif)">
                         $(if error == "")Por favor, insira o usuário e senha. $(if trial == 'yes')<br />Teste
@@ -97,11 +95,18 @@
                     </label>
 
                 </form>
+
+                <label id="google-login">
+                    <img class="ico" src="./img/google-icon.png" alt="">
+                    <input type="submit" value="Entrar com Google" />
+                </label>
+                <br>
                 <p class="info bt">Desenvolvido por Ágil Online - Todos os Direitos Reservados.</p>
 
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
